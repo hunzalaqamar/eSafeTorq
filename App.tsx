@@ -5,6 +5,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import DashboardScreen from './src/screens/DashboardScreen';
 import {RootStackParamList} from './src/constants/types'; // Import the stack param types
 import ConnectionScreen from './src/screens/ConnectionScreen';
+import SavedFilesScreen from './src/screens/SavedFilesScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -17,19 +18,21 @@ export default function App() {
           component={LoginScreen}
           options={{headerShown: false}}
         />
-        {/* Wrap in Screen */}
         <Stack.Screen
           name="Dashboard"
           component={DashboardScreen}
           options={{headerShown: false}}
         />
-        {/* Wrap in Screen */}
         <Stack.Screen
           name="Connect"
           component={ConnectionScreen}
           options={{title: 'Connecting Device'}}
         />
-        {/* Wrap in Screen */}
+        <Stack.Screen
+          name="SavedFiles"
+          component={SavedFilesScreen}
+          options={{title: 'Export Files'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

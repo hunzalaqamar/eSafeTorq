@@ -22,6 +22,10 @@ export default function DashboardScreen({navigation}: LoginScreenProps) {
     navigation.navigate('Connect'); // Navigate to the Connection Screen
   };
 
+  const handleSavedFiles = () => {
+    navigation.navigate('SavedFiles'); // Navigate to the Saved Files Screen
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
@@ -49,7 +53,7 @@ export default function DashboardScreen({navigation}: LoginScreenProps) {
               <Text style={styles.cardText}>CONNECT</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={handleSavedFiles}>
               <Image
                 source={{uri: 'https://your-icon-url.com'}}
                 style={styles.icon}
